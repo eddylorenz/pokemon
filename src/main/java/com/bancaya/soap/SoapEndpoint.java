@@ -13,26 +13,47 @@ import com.bancaya.soap.models.location.LocationResponse;
 import com.bancaya.soap.models.name.NameRequest;
 import com.bancaya.soap.models.name.NameResponse;
 import com.bancaya.soap.services.*;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.http.HttpHeaders;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+import org.springframework.context.ApplicationContext;
+
+
+import javax.servlet.http.HttpServletRequest;
 
 @Endpoint
-public class SoapEndpoint
-{
+public class SoapEndpoint {
 
     @Autowired
     public SoapEndpoint() {}
 
+    @Autowired
+    private HttpServletRequest requestHttp;
+
     @PayloadRoot(namespace = "com/bancaya/soap/models/abilities", localPart = "AbilitiesRequest")
     @ResponsePayload
     public AbilitiesResponse getAbilities(@RequestPayload AbilitiesRequest request) {
+
         AbilitiesService abilitiesService = new AbilitiesService();
         AbilitiesResponse abilitiesResponse = new AbilitiesResponse();
+
         try {
-            abilitiesResponse.setJsonResponse(abilitiesService.getAbilities(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            abilitiesResponse.setJsonResponse(abilitiesService.getAbilities(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +67,11 @@ public class SoapEndpoint
         ExperienceService experienceService = new ExperienceService();
         ExperienceResponse experienceResponse = new ExperienceResponse();
         try {
-            experienceResponse.setJsonResponse(experienceService.getExperience(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            experienceResponse.setJsonResponse(experienceService.getExperience(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +85,11 @@ public class SoapEndpoint
         HeldService heldService = new HeldService();
         HeldResponse heldResponse = new HeldResponse();
         try {
-            heldResponse.setJsonResponse(heldService.getHeld(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            heldResponse.setJsonResponse(heldService.getHeld(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +103,11 @@ public class SoapEndpoint
         IdService idService = new IdService();
         IdResponse idResponse = new IdResponse();
         try {
-            idResponse.setJsonResponse(idService.getId(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            idResponse.setJsonResponse(idService.getId(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +121,11 @@ public class SoapEndpoint
         NameService nameService = new NameService();
         NameResponse nameResponse = new NameResponse();
         try {
-            nameResponse.setJsonResponse(nameService.getName(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            nameResponse.setJsonResponse(nameService.getName(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -104,7 +141,11 @@ public class SoapEndpoint
         LocationService locationService = new LocationService();
         LocationResponse locationResponse = new LocationResponse();
         try {
-            locationResponse.setJsonResponse(locationService.getLocation(request.getPokemon()));
+            String ipAddress = requestHttp.getHeader("X-FORWARDED-FOR");
+            if (ipAddress == null) {
+                ipAddress = requestHttp.getRemoteAddr();
+            }
+            locationResponse.setJsonResponse(locationService.getLocation(request.getPokemon(), ipAddress));
         } catch (Exception e) {
             e.printStackTrace();
         }
