@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="com/bancaya/soap/models/held"
+           targetNamespace="com/bancaya/soap/models/held" elementFormDefault="qualified">
+
+    <xs:element name="HeldRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pokemon" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HeldResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="jsonResponse" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
