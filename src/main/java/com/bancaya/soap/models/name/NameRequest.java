@@ -6,7 +6,7 @@
 //
 
 
-package com.bancaya.soap.models.held;
+package com.bancaya.soap.models.name;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="jsonResponse" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="pokemon" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "jsonResponse"
+    "pokemon"
 })
-@XmlRootElement(name = "HeldResponse")
-public class HeldResponse {
+@XmlRootElement(name = "NameRequest")
+public class NameRequest {
 
     @XmlElement(required = true)
-    protected String jsonResponse;
+    protected String pokemon;
 
     /**
-     * Obtiene el valor de la propiedad jsonResponse.
+     * Obtiene el valor de la propiedad pokemon.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getJsonResponse() {
-        return jsonResponse;
+    public String getPokemon() {
+        return pokemon;
     }
 
     /**
-     * Define el valor de la propiedad jsonResponse.
+     * Define el valor de la propiedad pokemon.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setJsonResponse(String value) {
-        this.jsonResponse = value;
+    public void setPokemon(String value) {
+        this.pokemon = value;
     }
 
 }

@@ -6,7 +6,7 @@
 //
 
 
-package com.bancaya.soap.models.abilities;
+package com.bancaya.soap.models.name;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.bancaya.soap.models.abilities package. 
+ * generated in the com.bancaya.soap.models.name package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,26 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.bancaya.soap.models.abilities
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.bancaya.soap.models.name
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link AbilitiesResponse }
+     * Create an instance of {@link NameResponse }
      * 
      */
-    public AbilitiesResponse createAbilitiesResponse() {
-        return new AbilitiesResponse();
+    public NameResponse createNameResponse() {
+        return new NameResponse();
     }
 
     /**
-     * Create an instance of {@link AbilitiesRequest }
+     * Create an instance of {@link NameRequest }
      * 
      */
-    public AbilitiesRequest createAbilitiesRequest() {
-        return new AbilitiesRequest();
+    public NameRequest createNameRequest() {
+        return new NameRequest();
     }
 
 }

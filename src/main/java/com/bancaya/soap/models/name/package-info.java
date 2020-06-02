@@ -5,5 +5,5 @@
 // Generado el: 2020.06.02 a las 05:38:26 AM CDT 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "com/bancaya/soap/models/abilities", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.bancaya.soap.models.abilities;
+@javax.xml.bind.annotation.XmlSchema(namespace = "com/bancaya/soap/models/name", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.bancaya.soap.models.name;
