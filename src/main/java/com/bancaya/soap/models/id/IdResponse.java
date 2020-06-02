@@ -6,7 +6,7 @@
 //
 
 
-package com.bancaya.soap.models.abilities;
+package com.bancaya.soap.models.id;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "jsonResponse"
 })
-@XmlRootElement(name = "AbilitiesResponse")
-public class AbilitiesResponse {
+@XmlRootElement(name = "IdResponse")
+public class IdResponse {
 
     @XmlElement(required = true)
     protected String jsonResponse;

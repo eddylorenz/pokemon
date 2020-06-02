@@ -6,9 +6,12 @@ import com.bancaya.soap.models.experience.ExperienceRequest;
 import com.bancaya.soap.models.experience.ExperienceResponse;
 import com.bancaya.soap.models.held.HeldRequest;
 import com.bancaya.soap.models.held.HeldResponse;
+import com.bancaya.soap.models.id.IdRequest;
+import com.bancaya.soap.models.id.IdResponse;
 import com.bancaya.soap.services.AbilitiesService;
 import com.bancaya.soap.services.ExperienceService;
 import com.bancaya.soap.services.HeldService;
+import com.bancaya.soap.services.IdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -63,4 +66,19 @@ public class SoapEndpoint
 
         return heldResponse;
     }
+
+    @PayloadRoot(namespace = "com/bancaya/soap/models/id", localPart = "IdRequest")
+    @ResponsePayload
+    public IdResponse getId(@RequestPayload IdRequest request) {
+        IdService idService = new IdService();
+        IdResponse idResponse = new IdResponse();
+        try {
+            idResponse.setJsonResponse(idService.getId(request.getPokemon()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return idResponse;
+    }
+
 }
