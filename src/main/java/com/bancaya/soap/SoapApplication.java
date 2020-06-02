@@ -1,9 +1,7 @@
 package com.bancaya.soap;
 
-import com.bancaya.soap.services.AbilitiesService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 
 
 

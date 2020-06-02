@@ -13,21 +13,12 @@ import com.bancaya.soap.models.location.LocationResponse;
 import com.bancaya.soap.models.name.NameRequest;
 import com.bancaya.soap.models.name.NameResponse;
 import com.bancaya.soap.services.*;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.http.HttpHeaders;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import org.springframework.context.ApplicationContext;
+
 
 
 import javax.servlet.http.HttpServletRequest;
