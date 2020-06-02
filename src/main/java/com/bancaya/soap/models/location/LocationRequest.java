@@ -6,7 +6,7 @@
 //
 
 
-package com.bancaya.soap.models.held;
+package com.bancaya.soap.models.location;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "pokemon"
 })
-@XmlRootElement(name = "HeldRequest")
-public class HeldRequest {
+@XmlRootElement(name = "LocationRequest")
+public class LocationRequest {
 
     @XmlElement(required = true)
     protected String pokemon;

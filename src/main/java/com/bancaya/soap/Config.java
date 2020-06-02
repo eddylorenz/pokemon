@@ -114,4 +114,22 @@ public class Config extends WsConfigurerAdapter
         return new SimpleXsdSchema(new ClassPathResource("name.xsd"));
     }
 
+
+    @Bean(name = "locationWsdl")
+    public DefaultWsdl11Definition defaultWsdl11DefinitionLocation(XsdSchema locationSchema)
+    {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("locationPort");
+        wsdl11Definition.setLocationUri("/service/location");
+        wsdl11Definition.setTargetNamespace("com/bancaya/soap/models/location");
+        wsdl11Definition.setSchema(locationSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean
+    public XsdSchema locationSchema()
+    {
+        return new SimpleXsdSchema(new ClassPathResource("location.xsd"));
+    }
+
 }

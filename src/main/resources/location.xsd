@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="com/bancaya/soap/models/location"
+           targetNamespace="com/bancaya/soap/models/location" elementFormDefault="qualified">
+
+    <xs:element name="LocationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pokemon" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LocationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="jsonResponse" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

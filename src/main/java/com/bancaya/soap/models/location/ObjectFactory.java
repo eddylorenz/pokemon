@@ -6,7 +6,7 @@
 //
 
 
-package com.bancaya.soap.models.held;
+package com.bancaya.soap.models.location;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.bancaya.soap.models.held package. 
+ * generated in the com.bancaya.soap.models.location package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,26 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.bancaya.soap.models.held
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.bancaya.soap.models.location
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link HeldRequest }
+     * Create an instance of {@link LocationRequest }
      * 
      */
-    public HeldRequest createHeldRequest() {
-        return new HeldRequest();
+    public LocationRequest createLocationRequest() {
+        return new LocationRequest();
     }
 
     /**
-     * Create an instance of {@link HeldResponse }
+     * Create an instance of {@link LocationResponse }
      * 
      */
-    public HeldResponse createHeldResponse() {
-        return new HeldResponse();
+    public LocationResponse createLocationResponse() {
+        return new LocationResponse();
     }
 
 }

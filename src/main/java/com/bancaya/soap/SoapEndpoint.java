@@ -8,6 +8,8 @@ import com.bancaya.soap.models.held.HeldRequest;
 import com.bancaya.soap.models.held.HeldResponse;
 import com.bancaya.soap.models.id.IdRequest;
 import com.bancaya.soap.models.id.IdResponse;
+import com.bancaya.soap.models.location.LocationRequest;
+import com.bancaya.soap.models.location.LocationResponse;
 import com.bancaya.soap.models.name.NameRequest;
 import com.bancaya.soap.models.name.NameResponse;
 import com.bancaya.soap.services.*;
@@ -82,7 +84,7 @@ public class SoapEndpoint
 
     @PayloadRoot(namespace = "com/bancaya/soap/models/name", localPart = "NameRequest")
     @ResponsePayload
-    public NameResponse getId(@RequestPayload NameRequest request) {
+    public NameResponse getName(@RequestPayload NameRequest request) {
         NameService nameService = new NameService();
         NameResponse nameResponse = new NameResponse();
         try {
@@ -92,6 +94,22 @@ public class SoapEndpoint
         }
 
         return nameResponse;
+    }
+
+
+
+    @PayloadRoot(namespace = "com/bancaya/soap/models/location", localPart = "LocationRequest")
+    @ResponsePayload
+    public LocationResponse getLocation(@RequestPayload LocationRequest request) {
+        LocationService locationService = new LocationService();
+        LocationResponse locationResponse = new LocationResponse();
+        try {
+            locationResponse.setJsonResponse(locationService.getLocation(request.getPokemon()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return locationResponse;
     }
 
 }
